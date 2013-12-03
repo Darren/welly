@@ -13,5 +13,8 @@
 
 int main(int argc, char *argv[])
 {
+    if (signal(SIGCHLD, SIG_IGN) == SIG_ERR)
+        perror("signal error");
+    
     return NSApplicationMain(argc,  (const char **)argv);
 }
