@@ -78,7 +78,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(WLMainFrameController);
 
     [_mainWindow setFrameAutosaveName:@"wellyMainWindowFrame"];
         
-    [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(antiIdle:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(antiIdle:) userInfo:nil repeats:YES];
     
 	[self initializeRemoteControl];
 	// FIXME: Remove this controller
@@ -176,7 +176,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(WLMainFrameController);
     NSArray *a = [_tabView tabViewItems];
     for (NSTabViewItem *item in a) {
         WLConnection *connection = [[item identifier] content];
-        if ([connection isConnected] && [connection lastTouchDate] && [[NSDate date] timeIntervalSinceDate:[connection lastTouchDate]] >= 119) {
+        if ([connection isConnected] && [connection lastTouchDate] && [[NSDate date] timeIntervalSinceDate:[connection lastTouchDate]] >= 29) {
 //            unsigned char msg[] = {0x1B, 'O', 'A', 0x1B, 'O', 'B'};
             unsigned char msg[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
             [connection sendBytes:msg length:6];
