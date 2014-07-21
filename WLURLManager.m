@@ -167,12 +167,12 @@ NSString *const WLMenuTitleOpenWithBrowser = @"Open With Browser";
 	NSString *url = [[_manager activeTrackingAreaUserInfo] objectForKey:WLURLUserInfoName];
 	if (url != nil) {
 		if (([theEvent modifierFlags] & NSShiftKeyMask) == NSShiftKeyMask) {
+			// open with previewer
+			[WLPreviewController downloadWithURL:[NSURL URLWithString:url]];
+		} else {
 			// click while holding shift key or navigate web pages
 			// open the URL with browser
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-		} else {
-			// open with previewer
-			[WLPreviewController downloadWithURL:[NSURL URLWithString:url]];
 		}
 	}
 }
