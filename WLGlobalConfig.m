@@ -181,7 +181,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(WLGlobalConfig);
 			[defaults setBool:YES forKey:WLCoverFlowModeEnabledKeyName];
 		
 		// Initialize Cache
-		[isa initializeCache];
+		//[isa getinitializeCache];
 	}
     return self;
 }

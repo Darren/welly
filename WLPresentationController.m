@@ -139,7 +139,7 @@ WLGlobalConfig *gConfig;
 		[_fullScreenWindow setAnimations:[NSDictionary dictionaryWithObject:anim forKey:@"alphaValue"]];
 		[_fullScreenWindow.animator setAlphaValue:1.0];	
 		// Change UI mode by carbon
-		SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+		// SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
 		// Then, let the delegate function do it...
 	} else {
 		[self exitPresentationMode];
@@ -160,7 +160,7 @@ WLGlobalConfig *gConfig;
 		[self processBeforeExit];
 		[_fullScreenWindow.animator setAlphaValue:0];
 		// Change UI mode by carbon
-		SetSystemUIMode(kUIModeNormal, 0);
+		// SetSystemUIMode(kUIModeNormal, 0);
 		// Now, the delegate function will close the window
 		// So simply do nothing here.
 		

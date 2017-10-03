@@ -162,7 +162,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(WLContextualMenuManager);
 
 + (void)spotlight:(id)sender {
     NSString *u = [sender representedObject];
-    HISearchWindowShow((CFStringRef)u, kNilOptions);
+    //HISearchWindowShow((CFStringRef)u, kNilOptions);
 }
 
 + (void)lookupDictionary:(id)sender {
